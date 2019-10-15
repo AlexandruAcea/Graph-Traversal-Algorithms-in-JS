@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import EuropeMap from "./assets/euromap.webp";
 
+import PriorityQueue from "js-priority-queue";
+
 import Oras from "./Oras";
 
 import "./css/indes.css";
@@ -120,23 +122,27 @@ class App extends Component {
     );
   };
 
-  uniformCostSearch = (graph, start, destination) => {
-    let evaluationNode = 0;
-    let distances = [graph.length + 1];
+  dls = (graph, start, end, limit) => {
+    let sentinel = {};
+    let visitedStack = [start];
+    let path = [];
 
-    for (let i = 0; i < graph.length; i++) distances[i] = 999;
+    while (visitedStack) {
+      let currentVertex = visitedStack.pop();
 
-    for (let sourceNode = 0; sourceNode < graph.length; sourceNode++)
-      for (
-        let destinationNode = 1;
-        destinationNode < graph.length;
-        destinationNode++
-      )
-        graph[sourceNode][destination] = graph;
-
-    let priorityQueue = [];
-
-    priorityQueue.push();
+      if (currentVertex === end) {
+        path.push(currentVertex);
+        return path.concat(" -> ", path);
+      } else if (currentVertex === sentinel) {
+        limit += 1;
+        path.pop();
+      } else if (limit !== 0) {
+        limit -= 1;
+        path.push(currentVertex);
+        visitedStack.push(sentinel);
+        visitedStack.ex;
+      }
+    }
   };
 
   bfs = (graph, root) => {
