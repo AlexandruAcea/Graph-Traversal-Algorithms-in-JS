@@ -78,11 +78,25 @@
         background: #3498db;
         transition: 0.3s;
         position: absolute;
+        transform-origin: center;
+        cursor: pointer;
+
+        #orasTitle {
+          color: #fff;
+          // margin-left: -40px;
+          margin-top: 15px;
+          opacity: 0;
+          font-size: 22px;
+          text-shadow: 2px 2px #3498db;
+        }
       }
 
       .oras:hover {
-        width: 25px;
-        height: 25px;
+        transform: scale(2);
+
+        #orasTitle {
+          opacity: 1;
+        }
       }
 
       #Bucuresti {

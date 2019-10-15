@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import EuropeMap from "./assets/euromap.webp";
 
+import Oras from "./Oras";
+
 import "./css/indes.css";
 
 class App extends Component {
@@ -359,7 +361,10 @@ class App extends Component {
                 this.bucRef = el;
               }}
               onClick={() => this.setState({ start: 0 })}
-            ></div>
+            >
+              <h1 id="orasTitle">Bucuresti</h1>
+              {/* <Oras bfs={this.bfs} dfs={this.dfs}></Oras> */}
+            </div>
             <div
               className="oras"
               id="Paris"
@@ -368,7 +373,10 @@ class App extends Component {
                 this.parRef = el;
               }}
               onClick={() => this.setState({ start: 1 })}
-            ></div>
+            >
+              {" "}
+              <h1 id="orasTitle">Paris</h1>
+            </div>
             <div
               className="oras"
               id="Moscova"
@@ -377,7 +385,10 @@ class App extends Component {
                 this.mosRef = el;
               }}
               onClick={() => this.setState({ start: 2 })}
-            ></div>
+            >
+              {" "}
+              <h1 id="orasTitle">Moscova</h1>
+            </div>
             <div
               className="oras"
               id="Londra"
@@ -386,7 +397,10 @@ class App extends Component {
                 this.lonRef = el;
               }}
               onClick={() => this.setState({ start: 4 })}
-            ></div>
+            >
+              {" "}
+              <h1 id="orasTitle">Londra</h1>
+            </div>
             <div
               className="oras"
               id="Roma"
@@ -395,7 +409,10 @@ class App extends Component {
                 this.romRef = el;
               }}
               onClick={() => this.setState({ start: 3 })}
-            ></div>
+            >
+              {" "}
+              <h1 id="orasTitle">Roma</h1>
+            </div>
             <div
               className="oras"
               id="Berlin"
@@ -404,7 +421,10 @@ class App extends Component {
                 this.berRef = el;
               }}
               onClick={() => this.setState({ start: 5 })}
-            ></div>
+            >
+              {" "}
+              <h1 id="orasTitle">Berlin</h1>
+            </div>
             <div
               className="oras"
               id="Oslo"
@@ -413,7 +433,10 @@ class App extends Component {
                 this.oslRef = el;
               }}
               onClick={() => this.setState({ start: 6 })}
-            ></div>
+            >
+              {" "}
+              <h1 id="orasTitle">Oslo</h1>
+            </div>
           </div>
           <img src={EuropeMap} alt="" />
         </div>

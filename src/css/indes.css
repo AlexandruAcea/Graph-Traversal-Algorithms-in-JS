@@ -100,11 +100,26 @@
   -webkit-transition: 0.3s;
   transition: 0.3s;
   position: absolute;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  cursor: pointer;
+}
+
+.App .map .mapOverlay .oras #orasTitle {
+  color: #fff;
+  margin-top: 15px;
+  opacity: 0;
+  font-size: 22px;
+  text-shadow: 2px 2px #3498db;
 }
 
 .App .map .mapOverlay .oras:hover {
-  width: 25px;
-  height: 25px;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+.App .map .mapOverlay .oras:hover #orasTitle {
+  opacity: 1;
 }
 
 .App .map .mapOverlay #Bucuresti {
