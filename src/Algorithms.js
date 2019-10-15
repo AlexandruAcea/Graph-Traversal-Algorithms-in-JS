@@ -60,6 +60,8 @@ export function dfs(graph, start) {
 }
 
 export function dls(graph, start, max_depth) {
+  let show = "";
+
   let stack = [];
 
   let numberOfNodes = graph.length;
@@ -87,6 +89,11 @@ export function dls(graph, start, max_depth) {
 
           console.log(interpretor(destination) + " at depth " + depth);
 
+          show = show.concat(
+            interpretor(destination) + " at depth " + depth,
+            "\n"
+          );
+
           element = destination;
           destination = 1;
         }
@@ -98,6 +105,8 @@ export function dls(graph, start, max_depth) {
     stack.pop();
     depth--;
   }
+
+  return show;
 }
 
 export function interpretor(input) {
