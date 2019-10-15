@@ -192,6 +192,14 @@ class App extends Component {
     });
   }
 
+  renderDLS = () => {
+    return dls(this.state.graphInit, this.state.start, 5)
+      .split("\n")
+      .map((entry, i) => {
+        return <p>{entry}</p>;
+      });
+  };
+
   render() {
     let list = bfs(this.state.graphInit, this.state.start);
 
@@ -241,7 +249,7 @@ class App extends Component {
         <p id="dlsBoi">
           Depth Limited Search <br />
           <br />
-          {dls(this.state.graphInit, this.state.start, 5)}
+          {this.renderDLS()}
         </p>
 
         <h1 id="title1">Strategii de cautare neinformate</h1>

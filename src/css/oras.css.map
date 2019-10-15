@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,SAAS,CAAC;EACR,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,KAAK;EACjB,aAAa,EAAE,IAAI;EACnB,WAAW,EAAE,KAAK;EAClB,kBAAkB,EAAE,GAAG,CAAC,GAAG,CAAC,IAAI,CAAE,KAAI,CAAC,kBAAkB;CAK1D;;AAXD,AAQE,SARO,CAQP,EAAE,CAAC;EACD,KAAK,EAAE,KAAK;CACb",
-    "sources": [
-        "../styles/oras.scss"
-    ],
-    "names": [],
-    "file": "oras.css"
-}
