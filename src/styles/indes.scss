@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1,
+  h2 {
+    position: absolute;
+  }
+
+  #title1 {
+    top: 120px;
+    font-size: 25px;
+  }
+
+  #subtitle1 {
+    top: 150px;
+    font-size: 20px;
+  }
+
+  #startTitle {
+    position: absolute;
+    left: 60px;
+    top: 35%;
+    font-size: 27px;
+  }
+
+  ul {
+    padding: 0;
+    list-style-type: none;
+    position: absolute;
+    left: 60px;
+
+    li {
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+
+  #dfsBoi {
+    position: absolute;
+    left: 60px;
+    margin-top: 190px;
+    font-size: 20px;
+  }
+
+  .map {
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .mapOverlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: grid;
+
+      grid-template-columns: repeat(64, 1fr);
+      grid-template-rows: repeat(64, 1fr);
+
+      .oras {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: inline-block;
+        background: #3498db;
+        transition: 0.3s;
+        position: absolute;
+      }
+
+      .oras:hover {
+        width: 25px;
+        height: 25px;
+      }
+
+      #Bucuresti {
+        grid-column-start: 44;
+        grid-row-start: 48;
+      }
+
+      #Paris {
+        grid-column-start: 23;
+        grid-row-start: 42;
+      }
+      #Moscova {
+        grid-column-start: 56;
+        grid-row-start: 28;
+      }
+      #Roma {
+        grid-column-start: 33;
+        grid-row-start: 52;
+      }
+      #Londra {
+        grid-column-start: 21;
+        grid-row-start: 37;
+      }
+      #Berlin {
+        grid-column-start: 32;
+        grid-row-start: 35;
+      }
+
+      #Oslo {
+        grid-column-start: 30;
+        grid-row-start: 20;
+      }
+    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+#svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#line {
+  stroke-width: 4px;
+  stroke: #34495e;
+}

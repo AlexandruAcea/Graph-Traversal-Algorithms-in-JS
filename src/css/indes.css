@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App h1,
+.App h2 {
+  position: absolute;
+}
+
+.App #title1 {
+  top: 120px;
+  font-size: 25px;
+}
+
+.App #subtitle1 {
+  top: 150px;
+  font-size: 20px;
+}
+
+.App #startTitle {
+  position: absolute;
+  left: 60px;
+  top: 35%;
+  font-size: 27px;
+}
+
+.App ul {
+  padding: 0;
+  list-style-type: none;
+  position: absolute;
+  left: 60px;
+}
+
+.App ul li p {
+  font-size: 20px;
+}
+
+.App #dfsBoi {
+  position: absolute;
+  left: 60px;
+  margin-top: 190px;
+  font-size: 20px;
+}
+
+.App .map {
+  height: 100%;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .map .mapOverlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[64];
+      grid-template-columns: repeat(64, 1fr);
+  -ms-grid-rows: (1fr)[64];
+      grid-template-rows: repeat(64, 1fr);
+}
+
+.App .map .mapOverlay .oras {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-block;
+  background: #3498db;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  position: absolute;
+}
+
+.App .map .mapOverlay .oras:hover {
+  width: 25px;
+  height: 25px;
+}
+
+.App .map .mapOverlay #Bucuresti {
+  -ms-grid-column: 44;
+      grid-column-start: 44;
+  -ms-grid-row: 48;
+      grid-row-start: 48;
+}
+
+.App .map .mapOverlay #Paris {
+  -ms-grid-column: 23;
+      grid-column-start: 23;
+  -ms-grid-row: 42;
+      grid-row-start: 42;
+}
+
+.App .map .mapOverlay #Moscova {
+  -ms-grid-column: 56;
+      grid-column-start: 56;
+  -ms-grid-row: 28;
+      grid-row-start: 28;
+}
+
+.App .map .mapOverlay #Roma {
+  -ms-grid-column: 33;
+      grid-column-start: 33;
+  -ms-grid-row: 52;
+      grid-row-start: 52;
+}
+
+.App .map .mapOverlay #Londra {
+  -ms-grid-column: 21;
+      grid-column-start: 21;
+  -ms-grid-row: 37;
+      grid-row-start: 37;
+}
+
+.App .map .mapOverlay #Berlin {
+  -ms-grid-column: 32;
+      grid-column-start: 32;
+  -ms-grid-row: 35;
+      grid-row-start: 35;
+}
+
+.App .map .mapOverlay #Oslo {
+  -ms-grid-column: 30;
+      grid-column-start: 30;
+  -ms-grid-row: 20;
+      grid-row-start: 20;
+}
+
+.App img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#line {
+  stroke-width: 4px;
+  stroke: #34495e;
+}
+/*# sourceMappingURL=indes.css.map */
