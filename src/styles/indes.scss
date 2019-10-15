@@ -17,19 +17,19 @@
   }
 
   #title1 {
-    top: 120px;
+    top: 70px;
     font-size: 25px;
   }
 
   #subtitle1 {
-    top: 150px;
+    top: 100px;
     font-size: 20px;
   }
 
   #startTitle {
     position: absolute;
     left: 60px;
-    top: 35%;
+    top: 15%;
     font-size: 27px;
   }
 
@@ -38,7 +38,7 @@
     list-style-type: none;
     position: absolute;
     left: 60px;
-
+    top: 33%;
     li {
       p {
         font-size: 20px;
@@ -49,7 +49,14 @@
   #dfsBoi {
     position: absolute;
     left: 60px;
-    margin-top: 190px;
+    top: 21%;
+    font-size: 20px;
+  }
+
+  #dlsBoi {
+    position: absolute;
+    left: 60px;
+    top: 63%;
     font-size: 20px;
   }
 
@@ -100,13 +107,13 @@
       }
 
       #Bucuresti {
-        grid-column-start: 44;
-        grid-row-start: 48;
+        grid-column-start: 43;
+        grid-row-start: 55;
       }
 
       #Paris {
-        grid-column-start: 23;
-        grid-row-start: 42;
+        grid-column-start: 25;
+        grid-row-start: 46;
       }
       #Moscova {
         grid-column-start: 56;
@@ -114,11 +121,11 @@
       }
       #Roma {
         grid-column-start: 33;
-        grid-row-start: 52;
+        grid-row-start: 61;
       }
       #Londra {
-        grid-column-start: 21;
-        grid-row-start: 37;
+        grid-column-start: 22;
+        grid-row-start: 38;
       }
       #Berlin {
         grid-column-start: 32;
@@ -127,7 +134,7 @@
 
       #Oslo {
         grid-column-start: 30;
-        grid-row-start: 20;
+        grid-row-start: 15;
       }
     }
   }

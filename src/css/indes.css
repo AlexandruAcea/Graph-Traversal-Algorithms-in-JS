@@ -27,19 +27,19 @@
 }
 
 .App #title1 {
-  top: 120px;
+  top: 70px;
   font-size: 25px;
 }
 
 .App #subtitle1 {
-  top: 150px;
+  top: 100px;
   font-size: 20px;
 }
 
 .App #startTitle {
   position: absolute;
   left: 60px;
-  top: 35%;
+  top: 15%;
   font-size: 27px;
 }
 
@@ -48,6 +48,7 @@
   list-style-type: none;
   position: absolute;
   left: 60px;
+  top: 33%;
 }
 
 .App ul li p {
@@ -57,7 +58,14 @@
 .App #dfsBoi {
   position: absolute;
   left: 60px;
-  margin-top: 190px;
+  top: 21%;
+  font-size: 20px;
+}
+
+.App #dlsBoi {
+  position: absolute;
+  left: 60px;
+  top: 63%;
   font-size: 20px;
 }
 
@@ -123,17 +131,17 @@
 }
 
 .App .map .mapOverlay #Bucuresti {
-  -ms-grid-column: 44;
-      grid-column-start: 44;
-  -ms-grid-row: 48;
-      grid-row-start: 48;
+  -ms-grid-column: 43;
+      grid-column-start: 43;
+  -ms-grid-row: 55;
+      grid-row-start: 55;
 }
 
 .App .map .mapOverlay #Paris {
-  -ms-grid-column: 23;
-      grid-column-start: 23;
-  -ms-grid-row: 42;
-      grid-row-start: 42;
+  -ms-grid-column: 25;
+      grid-column-start: 25;
+  -ms-grid-row: 46;
+      grid-row-start: 46;
 }
 
 .App .map .mapOverlay #Moscova {
@@ -146,15 +154,15 @@
 .App .map .mapOverlay #Roma {
   -ms-grid-column: 33;
       grid-column-start: 33;
-  -ms-grid-row: 52;
-      grid-row-start: 52;
+  -ms-grid-row: 61;
+      grid-row-start: 61;
 }
 
 .App .map .mapOverlay #Londra {
-  -ms-grid-column: 21;
-      grid-column-start: 21;
-  -ms-grid-row: 37;
-      grid-row-start: 37;
+  -ms-grid-column: 22;
+      grid-column-start: 22;
+  -ms-grid-row: 38;
+      grid-row-start: 38;
 }
 
 .App .map .mapOverlay #Berlin {
@@ -167,8 +175,8 @@
 .App .map .mapOverlay #Oslo {
   -ms-grid-column: 30;
       grid-column-start: 30;
-  -ms-grid-row: 20;
-      grid-row-start: 20;
+  -ms-grid-row: 15;
+      grid-row-start: 15;
 }
 
 .App img {

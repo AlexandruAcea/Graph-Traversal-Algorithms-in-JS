@@ -2,9 +2,7 @@ import React, { Component } from "react";
 
 import EuropeMap from "./assets/euromap.webp";
 
-import PriorityQueue from "js-priority-queue";
-
-import Oras from "./Oras";
+import { bfs, dfs, dls, interpretor } from "./Algorithms";
 
 import "./css/indes.css";
 
@@ -23,11 +21,11 @@ class App extends Component {
       //B  P  M  R  L  B  O
       [0, 0, 0, 1, 1, 0, 0], //0   Bucuresti
       [0, 0, 0, 0, 1, 0, 0], //1   Paris
-      [0, 0, 0, 0, 0, 0, 0], //2   Moscova
+      [0, 0, 0, 0, 0, 0, 1], //2   Moscova
       [1, 0, 0, 0, 0, 0, 0], //3   Roma
       [1, 1, 0, 0, 0, 1, 0], //4   Londra
       [0, 0, 0, 0, 1, 0, 1], //5   Berlin
-      [0, 0, 0, 0, 0, 1, 0] //6    Oslo
+      [0, 0, 1, 0, 0, 1, 0] //6    Oslo
     ],
 
     start: 0,
@@ -122,90 +120,6 @@ class App extends Component {
     );
   };
 
-  dls = (graph, start, end, limit) => {
-    let sentinel = {};
-    let visitedStack = [start];
-    let path = [];
-
-    while (visitedStack) {
-      let currentVertex = visitedStack.pop();
-
-      if (currentVertex === end) {
-        path.push(currentVertex);
-        return path.concat(" -> ", path);
-      } else if (currentVertex === sentinel) {
-        limit += 1;
-        path.pop();
-      } else if (limit !== 0) {
-        limit -= 1;
-        path.push(currentVertex);
-        visitedStack.push(sentinel);
-        visitedStack.ex;
-      }
-    }
-  };
-
-  bfs = (graph, root) => {
-    var nodesLen = {};
-
-    for (var i = 0; i < graph.length; i++) {
-      nodesLen[i] = Infinity;
-    }
-    nodesLen[root] = 0;
-
-    var queue = [root];
-    var current;
-
-    while (queue.length !== 0) {
-      current = queue.shift();
-
-      var curConnected = graph[current];
-      var neighborIdx = [];
-      var idx = curConnected.indexOf(1);
-      while (idx !== -1) {
-        neighborIdx.push(idx);
-        idx = curConnected.indexOf(1, idx + 1);
-      }
-
-      for (var j = 0; j < neighborIdx.length; j++) {
-        if (nodesLen[neighborIdx[j]] === Infinity) {
-          nodesLen[neighborIdx[j]] = nodesLen[current] + 1;
-          queue.push(neighborIdx[j]);
-        }
-      }
-    }
-    return nodesLen;
-  };
-
-  dfs = (graph, start) => {
-    let dfsDisplay = "";
-
-    let visited = [0, 0, 0, 0, 0, 0, 0];
-
-    let stack = [start];
-
-    visited[0] = 1;
-
-    let node = stack.pop(stack.length - 1);
-    console.log(this.interpretor(node));
-    dfsDisplay = this.interpretor(node) + " ";
-
-    while (1) {
-      for (let i = 0; i < visited.length; i++)
-        if (graph[node][i] === 1 && visited[i] === 0) {
-          visited[i] = 1;
-          stack.push(i);
-        }
-      if (stack.length === 0) break;
-      else {
-        node = stack.pop();
-        console.log(this.interpretor(node));
-        dfsDisplay = dfsDisplay.concat(this.interpretor(node), " ");
-      }
-    }
-    return dfsDisplay;
-  };
-
   componentDidMount() {
     this.setState({
       orase: {
@@ -278,40 +192,10 @@ class App extends Component {
     });
   }
 
-  interpretor = input => {
-    let output = "";
-    switch (input) {
-      case 0:
-        output = "Bucuresti";
-        break;
-      case 1:
-        output = "Paris";
-        break;
-      case 2:
-        output = "Moscova";
-        break;
-      case 3:
-        output = "Roma";
-        break;
-      case 4:
-        output = "Londra";
-        break;
-      case 5:
-        output = "Berlin";
-        break;
-      case 6:
-        output = "Oslo";
-        break;
-      default:
-        output = "Bucuresti";
-    }
-    return output;
-  };
-
   render() {
-    let list = this.bfs(this.state.graphInit, this.state.start);
+    let list = bfs(this.state.graphInit, this.state.start);
 
-    let startChar = this.interpretor(this.state.start);
+    let startChar = interpretor(this.state.start);
 
     return (
       <div className="App">
@@ -319,6 +203,11 @@ class App extends Component {
 
         <h1 id="startTitle">{"Start: " + startChar}</h1>
 
+        <p id="dfsBoi">
+          Depth First Search <br />
+          <br />
+          {dfs(this.state.graphInit, this.state.start)}
+        </p>
         <ul>
           <li>
             <p>Breadth First Search</p>
@@ -349,10 +238,10 @@ class App extends Component {
           </li>
         </ul>
 
-        <p id="dfsBoi">
-          Depth First Search <br />
+        <p id="dlsBoi">
+          Depth Limited Search <br />
           <br />
-          {this.dfs(this.state.graphInit, this.state.start)}
+          {dls(this.state.graphInit, this.state.start, 5)}
         </p>
 
         <h1 id="title1">Strategii de cautare neinformate</h1>
@@ -369,7 +258,6 @@ class App extends Component {
               onClick={() => this.setState({ start: 0 })}
             >
               <h1 id="orasTitle">Bucuresti</h1>
-              {/* <Oras bfs={this.bfs} dfs={this.dfs}></Oras> */}
             </div>
             <div
               className="oras"
@@ -380,7 +268,6 @@ class App extends Component {
               }}
               onClick={() => this.setState({ start: 1 })}
             >
-              {" "}
               <h1 id="orasTitle">Paris</h1>
             </div>
             <div
@@ -392,7 +279,6 @@ class App extends Component {
               }}
               onClick={() => this.setState({ start: 2 })}
             >
-              {" "}
               <h1 id="orasTitle">Moscova</h1>
             </div>
             <div
@@ -404,7 +290,6 @@ class App extends Component {
               }}
               onClick={() => this.setState({ start: 4 })}
             >
-              {" "}
               <h1 id="orasTitle">Londra</h1>
             </div>
             <div
@@ -416,7 +301,6 @@ class App extends Component {
               }}
               onClick={() => this.setState({ start: 3 })}
             >
-              {" "}
               <h1 id="orasTitle">Roma</h1>
             </div>
             <div
@@ -428,7 +312,6 @@ class App extends Component {
               }}
               onClick={() => this.setState({ start: 5 })}
             >
-              {" "}
               <h1 id="orasTitle">Berlin</h1>
             </div>
             <div
@@ -440,7 +323,6 @@ class App extends Component {
               }}
               onClick={() => this.setState({ start: 6 })}
             >
-              {" "}
               <h1 id="orasTitle">Oslo</h1>
             </div>
           </div>
